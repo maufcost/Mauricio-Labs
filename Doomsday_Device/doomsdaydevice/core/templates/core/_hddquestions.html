@@ -1,0 +1,10 @@
+<div class="hidden_div">
+    {% for question in questions %}
+        <p id="hidden_title_q{{ forloop.counter0 }}">{{ question.title }}</p>
+        <p id="hidden_choice1_q{{ forloop.counter0 }}">{{ question.choice1 }}</p>
+        <p id="hidden_choice2_q{{ forloop.counter0 }}">{{ question.choice2 }}</p>
+        <p id="hidden_choice3_q{{ forloop.counter0 }}">{{ question.choice3 }}</p>
+        <p id="hidden_choice4_q{{ forloop.counter0 }}">{{ question.choice4 }}</p>
+        <p id="hidden_answer_q{{ forloop.counter0 }}">{{ question.correct_answer }}</p>
+    {% endfor %}
+</div>

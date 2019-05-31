@@ -1,0 +1,38 @@
+/* home.html ================================================================ */
+body {
+    color: #ffffff;
+    background-color: #141414;
+    margin-top: 20px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.main-text {
+    margin: 0;
+}
+
+.detail-text {
+    font-weight: lighter;
+    margin: 0;
+}
+
+.buttons, #question, .surrounding-border {
+    padding: 30px;
+    border: 1px solid #727272;
+    border-radius: 5px;
+}
+
+.hidden_div {
+    display: none;
+}
+
+.mistake-title {
+    color: white;
+}
+/* doomsday.html ============================================================ */
+.mistake-x {
+    color: red;
+}
+
+.dark-card {
+    background-color: #1e1e1e;
+}

@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Doomsday Has Arrived!</title>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Jura:700|Share+Tech+Mono&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Our custom CSS -->
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+        <!-- Setting bg img -->
+        <style>
+            body {
+                background-image: url("/static/core/img/doomsday_bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container jutify-content-center text-center mb-5">
+            <div class="mb-5">
+                <h1 class="main-text">
+                    D&nbsp;O&nbsp;O&nbsp;M&nbsp;S&nbsp;D&nbsp;A&nbsp;Y&nbsp;&nbsp;D&nbsp;E&nbsp;V&nbsp;I&nbsp;C&nbsp;E
+                </h1>
+                <p class="detail-text mb-3">&quot;The Accountability Booster&quot;</p>
+            </div>
+
+            <div class="surrounding-border">
+                <h1 class="main-text">DOOMSDAY HAS ARRIVED!</h1>
+                <p class="detail-text">E-mails will be sent at 5PM</p>
+            </div>
+        </div>
+
+        <!-- Displaying the five X -->
+        <div class="mistakes_div">
+            <h1 class="text-center">FIVE MISTAKES</h1>
+            <div class="row justify-content-center">
+                <div class="col-2">
+                    <div class="card dark-card" id="card1">
+                        <div class="card-body d-flex justify-content-center">
+                            <h1 class="mistake-x">X</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card dark-card" id="card2">
+                        <div class="card-body d-flex justify-content-center">
+                            <h1 class="mistake-x">X</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card dark-card" id="card3">
+                        <div class="card-body d-flex justify-content-center">
+                            <h1 class="mistake-x">X</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card dark-card" id="card4">
+                        <div class="card-body d-flex justify-content-center">
+                            <h1 class="mistake-x">X</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <div class="card dark-card" id="card5">
+                        <div class="card-body d-flex justify-content-center">
+                            <h1 class="mistake-x">X</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This is the audio for the last mistake -->
+        <script>
+            var audio = new Audio("{% static 'core/sound_effects/wrongAnswerSE.mp3' %}");
+            audio.play();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Doomsday Device</title>
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Jura:700|Share+Tech+Mono&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Our custom CSS -->
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+        <!-- Setting bg img -->
+        <style>
+            body {
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body class="d-flex align-items-center">
+
+        <div class="container text-center">
+
+            <h1 class="main-text">
+                D&nbsp;O&nbsp;O&nbsp;M&nbsp;S&nbsp;D&nbsp;A&nbsp;Y&nbsp;&nbsp;D&nbsp;E&nbsp;V&nbsp;I&nbsp;C&nbsp;E
+            </h1>
+            <p class="detail-text mb-3">&quot;The Accountability Booster&quot;</p>
+
+            <!-- Displaying the quiz -->
+            <div id="quiz">
+
+                <!-- Displaying the title-->
+                <p id="question"></p>
+
+                <!-- Displaying the choices -->
+                <div class="buttons justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <button id="btn1" class="btn btn-light"><span id="choice1"></span></btn>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-6">
+                            <button id="btn2" class="btn btn-light"><span id="choice2"></span></btn>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-6">
+                            <button id="btn3" class="btn btn-light"><span id="choice3"></span></btn>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="col-6">
+                            <button id="btn4" class="btn btn-light"><span id="choice4"></span></btn>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Displaying the progress -->
+                <footer>
+                    <p id="progress" class="mt-3"></p>
+                </footer>
+            </div>
+
+            <!-- Displaying the mistakes (if any). -->
+            <div class="mistakes_div">
+                <h1 class="text-center">NUMBER OF MISTAKES</h1>
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <div class="card" id="card1">
+                            <div class="card-body d-flex justify-content-center">
+                                <h1 class="mistake-title">X</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" id="card2">
+                            <div class="card-body d-flex justify-content-center">
+                                <h1 class="mistake-title">X</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" id="card3">
+                            <div class="card-body d-flex justify-content-center">
+                                <h1 class="mistake-title">X</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" id="card4">
+                            <div class="card-body d-flex justify-content-center">
+                                <h1 class="mistake-title">X</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" id="card5">
+                            <div class="card-body d-flex justify-content-center">
+                                <h1 class="mistake-title">X</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "core/_hddquestions.html" %}
+
+        <!-- Latest version of JQuery. -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+        <!-- Custom JS files. -->
+        <script src="{% static 'core/js/csrf_ajax.js' %}"></script>
+        <script src="{% static 'core/js/question.js' %}"></script>
+        <!-- I am creating this script so that I can reference the questions object
+        in the javascript files later -->
+        <script>
+            var questions = [];
+            const NUMBER_OF_QUESTIONS = parseInt("{{ questions|length }}");
+            const NUMBER_OF_CHOICES = 4;
+
+            // Setting the url to redirect users to after he/she has gotten
+            // to five mistakes.
+            redirect_user_url = "{% url 'doomsday-upn' %}"
+
+            var audio = new Audio("{% static 'core/sound_effects/wrongAnswerSE.mp3' %}");
+        </script>
+        <script src="{% static 'core/js/get_questions_from_db.js' %}"></script>
+        <script src="{% static 'core/js/quiz.js' %}"></script>
+        <script src="{% static 'core/js/app.js' %}"></script>
+
+        <!-- Bootstrap JS and jQuery. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
