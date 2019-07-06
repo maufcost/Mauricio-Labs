@@ -6,6 +6,7 @@ It's summer and time to meet new people, have different experiences, and experim
 I am always open to feedback and questions! 
 
 You can reach me out on:
+* Youtube: https://www.youtube.com/channel/UC8JfnIlzqo_JvB7WuvluHiQ
 * Twitter: https://twitter.com/mauricefcost
 * Instagram: https://www.instagram.com/mauriciofcost/
 
